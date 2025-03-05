@@ -19,4 +19,12 @@ export class ProductService {
   addProduct(product: Product): Observable<Object> {
     return this.clientHttp.post(this.urlBase, product);
   }
+
+  obtainProductById(id: number) {
+    return this.clientHttp.get<Product>(`${this.urlBase}/${id}`);
+  }
+
+  updateProduct(id: number, product: Product): Observable<Object> {
+    return this.clientHttp.put(`${this.urlBase}/${id}`, product);
+  }
 }

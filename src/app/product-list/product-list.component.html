@@ -7,6 +7,7 @@
                 <th scope="col">Description</th>
                 <th scope="col">Price</th>
                 <th scope="col">Quantity</th>
+                <th scope="col">Options</th>
             </tr>
         </thead>
         <tbody>
@@ -15,6 +16,13 @@
                 <td>{{ item.description }}</td>
                 <td>{{ item.price | currency }}</td>
                 <td>{{ item.quantity }} </td>
+                <td class="text-center">
+                    <div>
+                        <button (click)="editProduct(item.idProduct)"
+                            class="btn btn-warning btn-sm me-3">Update</button>
+                    </div>
+                </td>
+
             </tr>
 
         </tbody>
